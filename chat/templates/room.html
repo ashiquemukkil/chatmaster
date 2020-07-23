@@ -2,7 +2,6 @@
 <html>
 <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <link rel="shortcut icon" href="#" />
     <meta content="utf-8" http-equiv="encoding">
     <title>Chat Room</title>
 </head>
@@ -15,7 +14,7 @@
         const roomName = JSON.parse(document.getElementById('room-name').textContent);
         console.log('connrcted'+roomName)
         const chatSocket = new WebSocket(
-            'wss://'
+            'ws://'
             + window.location.host
             + '/ws/chat/'
             + roomName
@@ -32,6 +31,7 @@
         };
 <!--        console.log(chatSocket.onmessage)-->
         chatSocket.onclose = function(e) {
+            console.log(e);
             console.error('Chat socket closed unexpectedly');
         };
 
