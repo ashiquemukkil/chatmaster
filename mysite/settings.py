@@ -71,15 +71,26 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 ASGI_APPLICATION = 'mysite.routing.application'
-CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            "hosts": [('127.0.0.1', 6379)],
-        },
-    },
-}
+# CHANNEL_LAYERS = {
+#     'default': {
+#         'BACKEND': 'channels_redis.core.RedisChannelLayer',
+#         'CONFIG': {
+#             "hosts": [('sockbot.redis.cache.windows.net', 6380)],
+#             'password':'QkzlgyOTsbCC67EgmeguEpEZ080w8jwbMkU3d5Ip2Pg=','SSL':False
+#         },
+#     },
+# }
 
+# {
+#     'default': {
+#         'BACKEND': 'channels_redis.core.RedisChannelLayer',
+#         'CONFIG': {
+#             "HOSTS": 'sockbot.redis.cache.windows.net',
+#             'PORT':'6380',
+#             'PASSWORD':'QkzlgyOTsbCC67EgmeguEpEZ080w8jwbMkU3d5Ip2Pg=','SSL':False
+#         },
+#     },
+# }
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
